@@ -52,11 +52,19 @@ class _DetailedCardState extends State<DetailedCard>{
                       "at ${widget.exam.dateTime.hour.toString().padLeft(2,'0')}:${widget.exam.dateTime.minute.toString().padLeft(2,'0')}"
                     , style: TextStyle(fontSize: 20),)
                 ]),
-                Row(mainAxisAlignment: MainAxisAlignment.start,children: [
-                  Icon(Icons.meeting_room, size: 20, color: Colors.purpleAccent),
-                  SizedBox(width: 10),
-                  Text(widget.exam.rooms.join(', '),  style: TextStyle(fontSize: 20)),
-                ]),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Icon(Icons.meeting_room, size: 20, color: Colors.purpleAccent),
+                      SizedBox(width: 10),
+                      Text(
+                        widget.exam.rooms.join(', '),
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ],
+                  ),
+                ),
                 SizedBox(height: 15,),
                 Row(mainAxisAlignment: MainAxisAlignment.start,children: [
                   Text("${getTimeLeft()}",style: TextStyle(
