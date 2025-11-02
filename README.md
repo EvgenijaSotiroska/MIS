@@ -1,4 +1,4 @@
-# labaratoriska_1
+# Laboratory exercise
 
 A new Flutter project.
 
